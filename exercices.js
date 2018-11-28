@@ -1,4 +1,4 @@
-/*Exercice1*/
+/*Exercice 1*/
 let longueur = document.getElementById('longueur');
 let largeur = document.getElementById('largeur');
 let btnPerimetre = document.getElementById('btnPerimetre');
@@ -15,7 +15,7 @@ btnAire.onclick = function() {
 	document.getElementById('reponse1').innerHTML = aire + ' m²';
 }
 
-/*Exercice2*/
+/*Exercice 2*/
 
 let jours = document.getElementById('jours');
 let heures = document.getElementById('heures');
@@ -27,7 +27,7 @@ tempsEnSec.onclick = function() {
 	document.getElementById('reponse2').innerHTML = jours.value*24*3600 + heures.value*3600 + minutes.value*60 + secondes.value + ' secondes';
 }
 
-/*Exercice3*/
+/*Exercice 3*/
 
 let date1 = document.getElementById('date1');
 let date2 = document.getElementById('date2');
@@ -43,4 +43,36 @@ btnEcart.onclick = function() {
 	document.getElementById('reponse3').innerHTML = yearDiff*365*24*3600 + dayDiff*24*3600 + monthDiff*30.5*24*3600 + ' secondes';
 }
 
+/*Exercie 4*/
+
+let tirerNb1 = document.getElementById('tirerNb1');
+let tirerNb2 = document.getElementById('tirerNb2');
+let tirerNb3 = document.getElementById('tirerNb3');
+let tirerNbChance = document.getElementById('tirerNbChance');
+let tirerLoto = document.getElementById('tirerLoto');
+
+tirerNb1.onclick = function() {
+	document.getElementById('nb1').innerHTML += Math.floor(Math.random()*10)+1;
+}
+tirerNb2.onclick = function() {
+	document.getElementById('nb2').innerHTML += Math.floor(Math.random()*10)+1;
+}
+tirerNb3.onclick = function() {
+	document.getElementById('nb3').innerHTML += Math.floor(Math.random()*10)+1;
+}
+tirerNbChance.onclick = function() {
+	document.getElementById('nbChance').innerHTML += Math.floor(Math.random()*5)+1;
+}
+tirerLoto.onclick = function() {
+	document.getElementById('lotoNb1').innerHTML += Math.floor(Math.random()*10)+1;
+	document.getElementById('lotoNb2').innerHTML += Math.floor(Math.random()*10)+1;
+	document.getElementById('lotoNb3').innerHTML += Math.floor(Math.random()*10)+1;
+	document.getElementById('lotoNbChance').innerHTML += Math.floor(Math.random()*5)+1;
+	if (document.getElementById('nb1').innerHTML==document.getElementById('lotoNb1').innerHTML && document.getElementById('nb2').innerHTML==document.getElementById('lotoNb2').innerHTML && document.getElementById('nb3').innerHTML==document.getElementById('lotoNb3').innerHTML && document.getElementById('nbChance').innerHTML==document.getElementById('lotoNbChance').innerHTML) {
+		document.getElementById('messageLoto').innerHTML = "WINNER!!!!";
+	}
+	else {
+		document.getElementById('messageLoto').innerHTML = "LOSER....-_-''''";
+	}
+}
 
