@@ -45,34 +45,47 @@ btnEcart.onclick = function() {
 
 /*Exercie 4 loto*/
 
+let compteurLoto = 0;
 let tirerNb1 = document.getElementById('tirerNb1');
 let tirerNb2 = document.getElementById('tirerNb2');
 let tirerNb3 = document.getElementById('tirerNb3');
 let tirerNbChance = document.getElementById('tirerNbChance');
 let tirerLoto = document.getElementById('tirerLoto');
 
+function afficherResultat() {
+	if (document.getElementById('nb1').innerHTML==document.getElementById('lotoNb1').innerHTML && document.getElementById('nb2').innerHTML==document.getElementById('lotoNb2').innerHTML && document.getElementById('nb3').innerHTML==document.getElementById('lotoNb3').innerHTML && document.getElementById('nbChance').innerHTML==document.getElementById('lotoNbChance').innerHTML) {
+		document.getElementById('messageLoto').innerHTML = "WINNER!!!! - Nombre de clics : " + compteurLoto;
+	}
+	else {
+		document.getElementById('messageLoto').innerHTML = "LOSER....-_-'''' - Nombre de clics : " + compteurLoto;
+	}
+}
+
 tirerNb1.onclick = function() {
 	document.getElementById('nb1').innerHTML = Math.floor(Math.random()*10)+1;
+	compteurLoto++;
+	afficherResultat();
 }
 tirerNb2.onclick = function() {
 	document.getElementById('nb2').innerHTML = Math.floor(Math.random()*10)+1;
+	compteurLoto++;
+	afficherResultat();
 }
 tirerNb3.onclick = function() {
 	document.getElementById('nb3').innerHTML = Math.floor(Math.random()*10)+1;
+	compteurLoto++;
+	afficherResultat();
 }
 tirerNbChance.onclick = function() {
 	document.getElementById('nbChance').innerHTML = Math.floor(Math.random()*5)+1;
+	compteurLoto++;
+	afficherResultat();
 }
 tirerLoto.onclick = function() {
 	document.getElementById('lotoNb1').innerHTML = Math.floor(Math.random()*10)+1;
 	document.getElementById('lotoNb2').innerHTML = Math.floor(Math.random()*10)+1;
 	document.getElementById('lotoNb3').innerHTML = Math.floor(Math.random()*10)+1;
 	document.getElementById('lotoNbChance').innerHTML = Math.floor(Math.random()*5)+1;
-	if (document.getElementById('nb1').innerHTML==document.getElementById('lotoNb1').innerHTML && document.getElementById('nb2').innerHTML==document.getElementById('lotoNb2').innerHTML && document.getElementById('nb3').innerHTML==document.getElementById('lotoNb3').innerHTML && document.getElementById('nbChance').innerHTML==document.getElementById('lotoNbChance').innerHTML) {
-		document.getElementById('messageLoto').innerHTML = "WINNER!!!!";
-	}
-	else {
-		document.getElementById('messageLoto').innerHTML = "LOSER....-_-''''";
-	}
+	afficherResultat();
 }
 
