@@ -82,10 +82,22 @@ tirerNbChance.onclick = function() {
 	afficherResultat();
 }
 tirerLoto.onclick = function() {
-	document.getElementById('lotoNb1').innerHTML = Math.floor(Math.random()*10)+1;
-	document.getElementById('lotoNb2').innerHTML = Math.floor(Math.random()*10)+1;
-	document.getElementById('lotoNb3').innerHTML = Math.floor(Math.random()*10)+1;
-	document.getElementById('lotoNbChance').innerHTML = Math.floor(Math.random()*5)+1;
-	afficherResultat();
+	setTimeout(function(){
+		document.getElementById('lotoNb1').innerHTML = Math.floor(Math.random()*10)+1;
+		setTimeout(function(){
+			document.getElementById('lotoNb2').innerHTML = Math.floor(Math.random()*10)+1;
+			setTimeout(function(){
+				document.getElementById('lotoNb3').innerHTML = Math.floor(Math.random()*10)+1;
+				setTimeout(function(){
+					document.getElementById('lotoNbChance').innerHTML = Math.floor(Math.random()*5)+1;
+					setTimeout(function(){
+						afficherResultat();
+					},1000)
+				},1000)
+			},1000)
+		},1000)
+	},1000);
 }
+
+/*Exercice 5 calculatrice*/
 
