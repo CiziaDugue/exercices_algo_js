@@ -37,9 +37,10 @@ btnEcart.onclick = function() {
 	dateArr1 = date1.value.split('-');
 	dateArr2 = date2.value.split('-');
 	console.log(dateArr1+dateArr2);
-	monthDiff = dateArr2[0] - dateArr1[0];
-	dayDiff = dateArr2[1] - dateArr1[1];
-	yearDiff = dateArr2[2] - dateArr1[2];
+	yearDiff = dateArr2[0] - dateArr1[0];
+	monthDiff = dateArr2[1] - dateArr1[1];
+	dayDiff = dateArr2[2] - dateArr1[2];
+	console.log(monthDiff+' - '+dayDiff+' - '+yearDiff);
 	document.getElementById('reponse3').innerHTML = yearDiff*365*24*3600 + dayDiff*24*3600 + monthDiff*30.5*24*3600 + ' secondes';
 }
 
@@ -99,5 +100,60 @@ tirerLoto.onclick = function() {
 	},1000);
 }
 
-/*Exercice 5 calculatrice*/
+/*Exercice 5 calculatrice1*/
+
+let entree1 = document.getElementById('entree1');
+let entree2 = document.getElementById('entree2');
+let operateur = document.getElementById('operateur');
+let egal = document.getElementById('egal');
+let result = document.getElementById('result');
+let clear = document.getElementById('clear');
+
+egal.onclick = function() {
+	if (parseFloat(entree1.value) && parseFloat(entree2.value)) {
+		if (operateur.value == '+') {
+			result.value = parseFloat(entree1.value) + parseFloat(entree2.value);
+		}
+		if (operateur.value == '-') {
+			result.value = parseFloat(entree1.value) - parseFloat(entree2.value);
+		}
+		if (operateur.value == '*') {
+			result.value = parseFloat(entree1.value) * parseFloat(entree2.value);
+		}
+		if (operateur.value == '/') {
+			result.value = parseFloat(entree1.value) / parseFloat(entree2.value);
+		}
+		if (operateur.value == '%') {
+			result.value = parseFloat(entree1.value) % parseFloat(entree2.value);
+		}
+	}
+	else {
+		result.value = 'Entrez des nombres!'
+	}
+}
+clear.onclick = function() {
+	entree1.value = '';
+	entree2.value = '';
+	result.value = '';
+}
+
+
+/*Exercice 5 calculatrice2*/
+
+let affichageCalcul = document.getElementById('affichageCalcul');
+let btnCalc = document.getElementsByClassName('btnCalc');
+let btnCE = document.getElementById('ce');
+let btnPosNeg = document.getElementById('&plusmn;');
+let btnEgal = document.getElementById('=');
+
+btnCE.onclick = function() {
+	affichageCalcul.value = '';
+}
+
+btnCalc.onclick = function() {
+	affichageCalcul.value += this.id;
+}
+
+
+
 
