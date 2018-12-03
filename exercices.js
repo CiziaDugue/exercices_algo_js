@@ -100,7 +100,7 @@ tirerLoto.onclick = function() {
 	},1000);
 }
 
-/*Exercice 5 calculatrice1*/
+/*Exercice 5 calculatrice 1*/
 
 let entree1 = document.getElementById('entree1');
 let entree2 = document.getElementById('entree2');
@@ -138,7 +138,7 @@ clear.onclick = function() {
 }
 
 
-/*Exercice 5 calculatrice2*/
+/*Exercice 5 calculatrice 2*/
 
 let affichageCalcul = document.getElementById('affichageCalcul');
 let btnCalc = document.getElementsByClassName('btnCalc');
